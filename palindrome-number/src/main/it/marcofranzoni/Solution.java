@@ -6,20 +6,17 @@ public class Solution {
             return false;
         }
 
-        char[] charArray = String.valueOf(x).toCharArray();
+        int originalInput = x;
+        int reversed = 0;
 
-        for (int i=0; i < charArray.length; i++) {
-            if (i == charArray.length/2) {
-                return true;
-            }
+        while (x > 0) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
 
-            if (!(charArray[i] == charArray[charArray.length-i-1])) {
-                return false;
-            }
-
+            x = x / 10;
         }
 
-        return true;
+        return originalInput == reversed;
 
     }
 }

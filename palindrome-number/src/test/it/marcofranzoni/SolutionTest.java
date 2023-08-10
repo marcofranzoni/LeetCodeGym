@@ -39,5 +39,4 @@ class SolutionTest {
         assertFalse(palindromeNumber.isPalindrome(12531));
     }
 
-
 }
