@@ -16,11 +16,7 @@ public class Solution {
 
 		for (char c : s.toCharArray()) {
 			if (PARENTHESES.containsKey(c)) {
-				if (!input.isEmpty()) {
-					char lastParentheses = input.pop();
-					if (lastParentheses != PARENTHESES.get(c))
-						return false;
-				} else {
+				if (input.isEmpty() || input.pop() != PARENTHESES.get(c)) {
 					return false;
 				}
 			} else {
